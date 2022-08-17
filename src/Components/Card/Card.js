@@ -4,14 +4,9 @@ import SurveyJson from "../../Constant/survey.json"
 
 const Card = () => {
   const [selected, setSelected] = useState(0);
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    jobRole: "",
-    phoneNumber: "",
-  })
-
-
+  const [answer,setAnswer] = useState(SurveyJson);
+  console.log("🚀 ~ file: Card.js ~ line 8 ~ Card ~ answer", answer)
+ 
   const OnNextHandler = () => {
     setSelected(prev => {
       if (prev === SurveyJson.Questions.length - 1) {
@@ -20,11 +15,9 @@ const Card = () => {
         return prev + 1;
       }
     });
-
   }
 
-  console.log(formData);
-
+ 
   const OnPreviousHandler = () => {
     setSelected(prev => {
       if (prev === SurveyJson.Questions.length - 1) {
@@ -39,15 +32,11 @@ const Card = () => {
 
     switch (types) {
       case 'text':
-        return <input type={types} onChange={(e) => setFormData({
-          ...formData,
-          ...{firstName: e.currentTarget.value},
-         
-        })} />
+        return <input type={types} onChange={(e) => values.answer = e.currentTarget.value} required />
       case 'radio':
         return values.Choice.map((val) => {
           return <div>
-            <input type={types} name="radio" value={val.value} id={val.id} />
+            <input type={types} name="radio" value={val.value} id={val.id} required={values.IsRequired} onChange={(e) => values.answer = e.currentTarget.value} />
             <label htmlFor={val.id}>{val.text}</label>
           </div>
         })
@@ -55,11 +44,12 @@ const Card = () => {
       case 'checkbox':
         return values.Choice.map((val) => {
           return <div>
-            <input type={types} name={val.name} id={val.id} value={val.value} />
+            <input type={types} name={val.name} id={val.id} value={val.value} required={values.IsRequired} onChange={(e) => values.answer.push(e.currentTarget.value)} />
             <label htmlFor={val.id}>{val.text}</label>
           </div>
         })
     }
+    setAnswer(SurveyJson)
   }
 
 
