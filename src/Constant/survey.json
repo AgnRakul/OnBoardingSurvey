@@ -1,0 +1,167 @@
+{
+    "Initial_Question": 1,
+    "Questions": [
+        {
+            "QuestionId": 1,
+            "Next": 2,
+            "Question": "First Name",
+            "IsRequired": true,
+            "Type": "text",
+            "Prev": null
+        },
+        {
+            "QuestionId": 2,
+            "Next": 3,
+            "Question": "Last Name",
+            "IsRequired": true,
+            "Type": "text",
+            "Prev": 1
+        },
+        {
+            "QuestionId": 3,
+            "Next": 4,
+            "Question": "Job Role",
+            "IsRequired": true,
+            "Type": "text",
+            "Prev": 2
+        },
+        {
+            "QuestionId": 4,
+            "Next": 5,
+            "Question": "Phone Number",
+            "IsRequired": true,
+            "Type": "text",
+            "Prev": 3
+        },
+        {
+            "QuestionId": 5,
+            "Next": 6,
+            "Question": "What industry you're in ?",
+            "IsRequired": true,
+            "Type": "radio",
+            "Choice": [
+                {
+                    "id": 1,
+                    "value": "item1",
+                    "text": "Industry One"
+                },
+                {
+                    "id": 2,
+                    "value": "item2",
+                    "text": "Industry Two"
+                },
+                {
+                    "id": 3,
+                    "value": "item3",
+                    "text": "Industry Three"
+                }
+            ],
+            "Prev": 4
+        },
+        {
+            "QuestionId": 6,
+            "Next": 7,
+            "Question": "Company Name",
+            "IsRequired": true,
+            "Type": "text",
+            "Prev": 5
+        },
+        {
+            "QuestionId": 7,
+            "Next": 8,
+            "Question": "No of Employee",
+            "IsRequired": true,
+            "Type": "text",
+            "Prev": 6
+        },
+        {
+            "QuestionId": 8,
+            "Next": 9,
+            "Question": "When Started",
+            "IsRequired": true,
+            "Type": "text",
+            "Prev": 7
+        },
+        {
+            "QuestionId": 9,
+            "Next": 11,
+            "Question": "Address",
+            "IsRequired": true,
+            "Type": "text",
+            "Prev": 8
+        },
+        {
+            "QuestionId": 10,
+            "Next": 12,
+            "Question": "What is your primary goal in Retainful ?",
+            "IsRequired": true,
+            "Type": "checkbox",
+            "Choice": [
+                {
+                    "id": 1,
+                    "value": "item1",
+                    "text": "Recovering abandoned carts"
+                },
+                {
+                    "id": 2,
+                    "value": "item2",
+                    "text": "driving repeat purchase (increasing LTV)"
+                },
+                {
+                    "id": 3,
+                    "value": "item3",
+                    "text": "acquring new customers"
+                },
+                {
+                    "id": 4,
+                    "value": "item4",
+                    "text": "sending newsletters & promotions"
+                }
+            ],
+            "Prev": 11
+        },
+        {
+            "QuestionId": 11,
+            "Next": [
+                10,
+                12
+            ],
+            "Question": "Would you like to get a free onboarding session ? (Our onboarding specialists will assist you to set up Retainful and make the most out of it)",
+            "IsRequired": true,
+            "Type": "radio",
+            "Choice": [
+                {
+                    "id": 1,
+                    "value": "yes",
+                    "text": "Yes"
+                },
+                {
+                    "id": 2,
+                    "value": "no",
+                    "text": "No"
+                }
+            ],
+            "Prev": 9
+        },
+        {
+            "QuestionId": 12,
+            "Next": null,
+            "Question": "Number contacts you currently have ?",
+            "IsRequired": true,
+            "Type": "radio",
+            "Choice": [
+                {
+                    "id": 1,
+                    "value": "500",
+                    "text": "500"
+                },
+                {
+                    "id": 2,
+                    "value": "1000",
+                    "text": "1000"
+                }
+            ],
+            "Prev": 11
+        }
+    ]
+}
