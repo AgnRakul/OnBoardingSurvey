@@ -4,25 +4,32 @@ import SurveyJson from "../../Constant/survey.json"
 
 
 const Card = () => {
-  const [selected, setSelected] = useState(1);
+  const [selected, setSelected] = useState(9);
   const [currentValue, setCurrentvalue] = useState();
   const [storedVals, setStoreVals] = useState([]);
   const [finalValue, setFinalValue] = useState({});
-  const checkBoxAnswers = [];
+
+
+  console.log(finalValue)
 
   const getNextQuestion = (answerIndex, nextQuestion, Question) => {
-  
-    checkBoxAnswers.length === 0 ? setStoreVals([...storedVals, currentValue]) : setStoreVals([...storedVals, checkBoxAnswers])
+
+
+    setStoreVals([...storedVals, currentValue])
 
     setFinalValue({
       ...finalValue,
-      [Question]: checkBoxAnswers.length === 0 ? currentValue : checkBoxAnswers
+
+      [Question]: currentValue
     })
 
-    if (typeof nextQuestion === 'number')
+    if (typeof nextQuestion === 'number') {
+      setCurrentvalue([])
       return setSelected(nextQuestion);
+    }
 
     answerIndex.map((x) => {
+      setCurrentvalue([])
       return x.value === currentValue && setSelected(nextQuestion[answerIndex.indexOf(x)])
     })
   }
@@ -35,8 +42,8 @@ const Card = () => {
 
     if (types === "checkbox") {
 
-      checkBoxAnswers.push(e.currentTarget.value)
 
+      setCurrentvalue([...currentValue, e.currentTarget.value])
 
     } else {
       setCurrentvalue(e.currentTarget.value)
@@ -80,7 +87,7 @@ const Card = () => {
                 {renderInputs(Qns.Type, Qns)}
                 <div>
                   <button className={Qns.Prev === null ? "hidden" : "none"} onClick={() => OnPreviousHandler(Qns)}>Previous</button>
-                  <button onClick={() => getNextQuestion(Qns.Choice, Qns.Next , Qns.Question)}>{Qns.Next === null ? "Submit" : "Next"}</button>
+                  <button onClick={() => getNextQuestion(Qns.Choice, Qns.Next, Qns.Question)}>{Qns.Next === null ? "Submit" : "Next"}</button>
                 </div>
               </div>
 
