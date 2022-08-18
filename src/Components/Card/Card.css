@@ -10,3 +10,8 @@
     border-radius: 12px;
     background-color: wheat;
 }
+
+.hidden {
+    display: none;
+}
+

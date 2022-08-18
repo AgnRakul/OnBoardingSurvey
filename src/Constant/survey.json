@@ -4,8 +4,7 @@
             "QuestionId": 1,
             "Next": 2,
             "Question": "First Name",
-            "answer": null,
-            "IsRequired": true,
+            "answer": "",
             "Type": "text",
             "Prev": null
         },
@@ -13,8 +12,7 @@
             "QuestionId": 2,
             "Next": 3,
             "Question": "Last Name",
-            "answer": null,
-            "IsRequired": true,
+            "answer": "",
             "Type": "text",
             "Prev": 1
         },
@@ -22,8 +20,7 @@
             "QuestionId": 3,
             "Next": 4,
             "Question": "Job Role",
-            "answer": null,
-            "IsRequired": true,
+            "answer": "",
             "Type": "text",
             "Prev": 2
         },
@@ -31,8 +28,7 @@
             "QuestionId": 4,
             "Next": 5,
             "Question": "Phone Number",
-            "answer": null,
-            "IsRequired": true,
+            "answer": "",
             "Type": "text",
             "Prev": 3
         },
@@ -40,8 +36,7 @@
             "QuestionId": 5,
             "Next": 6,
             "Question": "What industry you're in ?",
-            "IsRequired": true,
-            "answer": null,
+            "answer": "",
             "Type": "radio",
             "Choice": [
                 {
@@ -66,8 +61,7 @@
             "QuestionId": 6,
             "Next": 7,
             "Question": "Company Name",
-            "IsRequired": true,
-            "answer": null,
+            "answer": "",
             "Type": "text",
             "Prev": 5
         },
@@ -75,8 +69,7 @@
             "QuestionId": 7,
             "Next": 8,
             "Question": "No of Employee",
-            "IsRequired": true,
-            "answer": null,
+            "answer": "",
             "Type": "text",
             "Prev": 6
         },
@@ -84,7 +77,6 @@
             "QuestionId": 8,
             "Next": 9,
             "Question": "When Started",
-            "IsRequired": true,
             "answer": "",
             "Type": "text",
             "Prev": 7
@@ -93,7 +85,6 @@
             "QuestionId": 9,
             "Next": 11,
             "Question": "Address",
-            "IsRequired": true,
             "answer": "",
             "Type": "text",
             "Prev": 8
@@ -102,7 +93,6 @@
             "QuestionId": 10,
             "Next": 12,
             "Question": "What is your primary goal in Retainful ?",
-            "IsRequired": true,
             "answer": [],
             "Type": "checkbox",
             "Choice": [
@@ -136,18 +126,17 @@
                 12
             ],
             "Question": "Would you like to get a free onboarding session ? (Our onboarding specialists will assist you to set up Retainful and make the most out of it)",
-            "IsRequired": true,
-            "answer": null,
+            "answer": "",
             "Type": "radio",
             "Choice": [
                 {
                     "id": 1,
-                    "value": "yes",
+                    "value": "item1",
                     "text": "Yes"
                 },
                 {
                     "id": 2,
-                    "value": "no",
+                    "value": "item2",
                     "text": "No"
                 }
             ],
@@ -157,18 +146,17 @@
             "QuestionId": 12,
             "Next": null,
             "Question": "Number contacts you currently have ?",
-            "IsRequired": true,
-            "answer": null,
+            "answer": "",
             "Type": "radio",
             "Choice": [
                 {
                     "id": 1,
-                    "value": "500",
+                    "value": "item1",
                     "text": "500"
                 },
                 {
                     "id": 2,
-                    "value": "1000",
+                    "value": "item2",
                     "text": "1000"
                 }
             ],
