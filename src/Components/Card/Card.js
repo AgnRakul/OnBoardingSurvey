@@ -4,27 +4,20 @@ import SurveyJson from "../../Constant/survey.json"
 
 
 const Card = () => {
-  const [selected, setSelected] = useState(9);
+  const [selected, setSelected] = useState(1);
   const [currentValue, setCurrentvalue] = useState();
   const [storedVals, setStoreVals] = useState([]);
-  const b = [];
- 
-  const finalValue = [];
-  console.log("🚀 ~ file: Card.js ~ line 13 ~ Card ~ finalValue", finalValue)
-
+  const [finalValue, setFinalValue] = useState({});
+  const checkBoxAnswers = [];
 
   const getNextQuestion = (answerIndex, nextQuestion, Question) => {
   
+    checkBoxAnswers.length === 0 ? setStoreVals([...storedVals, currentValue]) : setStoreVals([...storedVals, checkBoxAnswers])
 
-    finalValue.push(
+    setFinalValue({
       ...finalValue,
-      {
-        Question: Question,
-        Answer: currentValue
-      }
-    )
-
-    b.length === 0 ? setStoreVals([...storedVals, currentValue]) : setStoreVals([...storedVals, b])
+      [Question]: checkBoxAnswers.length === 0 ? currentValue : checkBoxAnswers
+    })
 
     if (typeof nextQuestion === 'number')
       return setSelected(nextQuestion);
@@ -42,7 +35,7 @@ const Card = () => {
 
     if (types === "checkbox") {
 
-      b.push(e.currentTarget.value)
+      checkBoxAnswers.push(e.currentTarget.value)
 
 
     } else {
@@ -87,7 +80,7 @@ const Card = () => {
                 {renderInputs(Qns.Type, Qns)}
                 <div>
                   <button className={Qns.Prev === null ? "hidden" : "none"} onClick={() => OnPreviousHandler(Qns)}>Previous</button>
-                  <button className={Qns.Next === null ? "hidden" : "none"} onClick={() => getNextQuestion(Qns.Choice, Qns.Next , Qns.Question)}>Next</button>
+                  <button onClick={() => getNextQuestion(Qns.Choice, Qns.Next , Qns.Question)}>{Qns.Next === null ? "Submit" : "Next"}</button>
                 </div>
               </div>
 

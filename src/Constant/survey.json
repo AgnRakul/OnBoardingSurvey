@@ -41,17 +41,17 @@
             "Choice": [
                 {
                     "id": 1,
-                    "value": "item1",
+                    "value": "Industry One",
                     "text": "Industry One"
                 },
                 {
                     "id": 2,
-                    "value": "item2",
+                    "value": "Industry Two",
                     "text": "Industry Two"
                 },
                 {
                     "id": 3,
-                    "value": "item3",
+                    "value": "Industry Three",
                     "text": "Industry Three"
                 }
             ],
@@ -98,22 +98,22 @@
             "Choice": [
                 {
                     "id": 1,
-                    "value": "item1",
+                    "value": "Recovering abandoned carts",
                     "text": "Recovering abandoned carts"
                 },
                 {
                     "id": 2,
-                    "value": "item2",
+                    "value": "driving repeat purchase (increasing LTV)",
                     "text": "driving repeat purchase (increasing LTV)"
                 },
                 {
                     "id": 3,
-                    "value": "item3",
+                    "value": "acquring new customers",
                     "text": "acquring new customers"
                 },
                 {
                     "id": 4,
-                    "value": "item4",
+                    "value": "sending newsletters & promotions",
                     "text": "sending newsletters & promotions"
                 }
             ],
@@ -131,12 +131,12 @@
             "Choice": [
                 {
                     "id": 1,
-                    "value": "item1",
+                    "value": "Yes",
                     "text": "Yes"
                 },
                 {
                     "id": 2,
-                    "value": "item2",
+                    "value": "No",
                     "text": "No"
                 }
             ],
@@ -151,12 +151,12 @@
             "Choice": [
                 {
                     "id": 1,
-                    "value": "item1",
+                    "value": "500",
                     "text": "500"
                 },
                 {
                     "id": 2,
-                    "value": "item2",
+                    "value": "1000",
                     "text": "1000"
                 }
             ],
