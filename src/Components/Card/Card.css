@@ -5,13 +5,22 @@
     padding: 10px;
     justify-content: start;
     width: 800px;
-    height: 400px;
-    box-shadow: -2px -3px 6px 1px #CECECE;
+    height: 200px;
+    box-shadow: 0 12px 35px rgba(196, 191, 191, 0.4);
     border-radius: 12px;
-    background-color: wheat;
+    background-color: rgb(255, 255, 255);
 }
 
 .hidden {
     display: none;
 }
 
+.btn-div {
+
+    padding: 10px;
+    margin: 10%;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    
+}

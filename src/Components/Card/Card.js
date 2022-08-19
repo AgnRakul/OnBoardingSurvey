@@ -1,19 +1,19 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Card.css"
 import SurveyJson from "../../Constant/survey.json"
 
 
 const Card = () => {
-  const [selected, setSelected] = useState(9);
+  const [selected, setSelected] = useState(1);
   const [currentValue, setCurrentvalue] = useState();
   const [storedVals, setStoreVals] = useState([]);
   const [finalValue, setFinalValue] = useState({});
+  const [isDisabled, setIsDisabled] = useState(true)
 
 
   console.log(finalValue)
 
   const getNextQuestion = (answerIndex, nextQuestion, Question) => {
-
 
     setStoreVals([...storedVals, currentValue])
 
@@ -41,14 +41,22 @@ const Card = () => {
   const onInputHandler = (e, types) => {
 
     if (types === "checkbox") {
-
-
       setCurrentvalue([...currentValue, e.currentTarget.value])
-
     } else {
       setCurrentvalue(e.currentTarget.value)
     }
+
+    if(e.currentTarget.value !== "" ) {
+      setIsDisabled(false)
+    } else {
+      setIsDisabled(true)
+    }
+
   }
+
+  useEffect(() => {
+    setIsDisabled(true)
+  }, [selected])
 
 
   const renderInputs = (types, values) => {
@@ -75,29 +83,26 @@ const Card = () => {
 
   }
 
-
   return (
     <div className='card'>
+      <h4>OnBoarding Survey</h4>
       <div className='input'>
         {
           SurveyJson.Questions.map((Qns, index) => {
             if (Qns.QuestionId === selected) {
               return <div key={index}>
-                <h5>{Qns.QuestionId}.{Qns.Question}</h5>
+                <h5>{Qns.Question}</h5>
                 {renderInputs(Qns.Type, Qns)}
-                <div>
+                <div className='btn-div'>
                   <button className={Qns.Prev === null ? "hidden" : "none"} onClick={() => OnPreviousHandler(Qns)}>Previous</button>
-                  <button onClick={() => getNextQuestion(Qns.Choice, Qns.Next, Qns.Question)}>{Qns.Next === null ? "Submit" : "Next"}</button>
+                  <button  disabled={isDisabled} onClick={() => getNextQuestion(Qns.Choice, Qns.Next, Qns.Question)}>{Qns.Next === null ? "Submit" : "Next"}</button>
                 </div>
               </div>
-
             }
 
           })
         }
       </div>
-
-
     </div>
   )
 }
